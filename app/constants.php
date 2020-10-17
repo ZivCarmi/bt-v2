@@ -1,8 +1,5 @@
 <?php if (!defined('ABSPATH')) {exit;}
 
-// set the base theme directory path
-define('THEME_DIR', WP_CONTENT_DIR . '/themes/bt/');
-
 // The base path of the site, example http://www.mysite.com
 define('BPATH', get_site_url());
 
