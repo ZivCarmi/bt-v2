@@ -10,7 +10,7 @@ class Filters {
 	}
 
 	static public function bt_dequeue_woocommerce_styles ($enqueued_styles) {
-		if (true) {
+		if (!is_admin()) {
 			unset($enqueued_styles['woocommerce-general']);
 			unset($enqueued_styles['woocommerce-layout']);
 			unset($enqueued_styles['woocommerce-smallscreen']);
