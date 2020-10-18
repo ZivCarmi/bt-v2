@@ -20,6 +20,9 @@ class Support {
 
 		// lets the wordpress manage the documnet title
 		add_theme_support('title-tag');
+		
+		// add custom site logo support
+		add_theme_support('custom-logo');
 
 		// add support for woocommerce plugin
 		if (class_exists('woocommerce')) {
