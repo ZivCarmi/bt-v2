@@ -24,6 +24,7 @@ class Master {
 			self::THEME_PREFIX . 'RemoveCoreFeatures',
 			
 			// optional (uncomment only when using)
+			//self::THEME_PREFIX . 'Pixels',
 			//self::THEME_PREFIX . 'Ajax',
 			//self::THEME_PREFIX . 'Actions',
 			//self::THEME_PREFIX . 'Filters',
