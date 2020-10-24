@@ -35,7 +35,7 @@ class Helper {
 	}
 
 	// basic php error loger using print_r
-	static public function _el ($value) {
+	static public function el ($value) {
 		$ds = DIRECTORY_SEPARATOR;
 
 		error_log(print_r($value, true), 3, BDIR . "{$ds}log{$ds}log.txt");
