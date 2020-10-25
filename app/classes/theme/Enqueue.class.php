@@ -37,6 +37,8 @@ class Enqueue {
 		if (is_front_page()) {
 			wp_enqueue_style('bt-front-page', self::$TEMPLATE_DIRECTORY_URI . '/assets/css/pages/front-page.css' . self::$FILES_VERSION);
 		}
+		
+		self::bt_load_styles_inline();
 	}
 
 	static public function enqueue_scripts () {
@@ -56,5 +58,53 @@ class Enqueue {
 		if (is_front_page()) {
 			wp_enqueue_script('bt-front-page', self::$TEMPLATE_DIRECTORY_URI . '/assets/js/pages/front-page.js' . self::$FILES_VERSION, ['jquery'], '', true);
 		}
+	}
+	
+	static private function bt_load_styles_inline () {
+		global $wp_styles;
+		
+		$queue_styles = $wp_styles->queue;
+		
+		ob_start();
+		
+		foreach ($queue_styles as $style_handle) {
+			$file = $wp_styles->registered[$style_handle]->src;
+			
+			if (strpos($file, BPATH . '/wp-content/themes/bt/') !== false) {
+				$file = str_replace(self::$FILES_VERSION, '', $file);
+				
+				if (file_exists($file)) {
+					wp_dequeue_style($style_handle);
+					
+					include $file;
+				} else {
+					$file = str_replace(BPATH . '/wp-content/themes/bt/', THEME_DIR, $file);
+					$file = str_replace(self::$FILES_VERSION, '', $file);
+					
+					if (file_exists($file)) {
+						wp_dequeue_style($style_handle);
+						
+						include $file;
+					}
+				}
+			}
+		}
+		
+		$files_content = ob_get_contents();
+
+		ob_end_clean();
+
+		if (!empty($files_content)) {
+			$files_content = preg_replace('/\s*(?!<\")\/\*[^\*]+\*\/(?!\")\s*/', '', $files_content);
+			$files_content = preg_replace("/\s{2,}/", ' ', $files_content);
+			$files_content = str_replace("\n", '', $files_content);
+			$files_content = str_replace(', ', ',', $files_content);
+			
+			self::$minified_css = '<style>' . $files_content . '</style>';
+		}
+		
+		add_action('bt_html_head_end', function(){
+			echo self::$minified_css;
+		});
 	}
 }
