@@ -9,7 +9,7 @@ class Master {
 	const THEME_PREFIX = self::NAMESPACE_PREFIX . 'theme\\';
 
 	const PLUGINS_PREFIX = [
-		'acf' 		  => self::NAMESPACE_PREFIX . 'plugins\\acf\\',
+		'acf' 	      => self::NAMESPACE_PREFIX . 'plugins\\acf\\',
 		'woocommerce' => self::NAMESPACE_PREFIX . 'plugins\\woocommerce\\'
 	];
 
