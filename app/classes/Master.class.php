@@ -37,7 +37,7 @@ class Master {
 		if (class_exists('woocommerce')) {
 			$classes[] = self::PLUGINS_PREFIX['woocommerce'] . 'Actions';
 			$classes[] = self::PLUGINS_PREFIX['woocommerce'] . 'Filters';
-			$classes[] = self::PLUGINS_PREFIX['woocommerce'] . 'Extension';
+			$classes[] = self::PLUGINS_PREFIX['woocommerce'] . 'Templates';
 		}
 
 		foreach ($classes as $class) {
