@@ -3,7 +3,7 @@ namespace app\classes\plugins\woocommerce;
 
 if (!defined('ABSPATH')) {exit;}
 
-class Extension {
+class Templates {
 	static public function init () {
 
 	}
