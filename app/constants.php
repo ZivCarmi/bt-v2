@@ -10,7 +10,7 @@ define('FPATH', filter_var(BPATH . $_SERVER['REQUEST_URI'] , FILTER_SANITIZE_URL
 define('CPATH', explode('?',FPATH )[0]);
 
 // the path to the tiny gif image
-define('TINYGIF', BPATH . '/assets/images/tinygif.gif');
+define('TINYGIF', BPATH . '/wp-content/themes/bt/assets/images/tinygif.gif');
 
 // the direction of the site
 define('IS_RTL', is_rtl());
