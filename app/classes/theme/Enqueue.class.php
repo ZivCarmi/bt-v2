@@ -38,7 +38,7 @@ class Enqueue {
 			wp_enqueue_style('bt-front-page', self::$TEMPLATE_DIRECTORY_URI . '/assets/css/pages/front-page.css' . self::$FILES_VERSION);
 		}
 		
-		self::bt_load_styles_inline();
+		// self::bt_load_styles_inline();
 	}
 
 	static public function enqueue_scripts () {
