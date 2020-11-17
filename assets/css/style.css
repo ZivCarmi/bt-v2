@@ -37,6 +37,7 @@
 a {
 	text-decoration: none;
 	color: inherit;
+	outline: unset;
 }
 
 ul,
@@ -124,11 +125,13 @@ body * {
 	background-size: contain;
 }
 
-.content-no-margin-top-bottom > :first-child {
+.content-no-margin-top-bottom > :first-child,
+.wnm > :first-child {
 	margin-top: 0;
 }
 
-.content-no-margin-top-bottom > :last-child {
+.content-no-margin-top-bottom > :last-child,
+.wnm > :last-child {
 	margin-bottom: 0;
 }
 
