@@ -5,3 +5,6 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 
 // Make wordpress display all PHP errors
 define('WP_DEBUG', true);
+
+// Limit the number of revisions
+define('WP_POST_REVISIONS', 3);
