@@ -2,9 +2,13 @@
 
 // Disable all wordpress auto updates. 
 define('AUTOMATIC_UPDATER_DISABLED', true);
+define('WP_AUTO_UPDATE_CORE', false);
 
 // Make wordpress display all PHP errors
 define('WP_DEBUG', true);
 
 // Limit the number of revisions
 define('WP_POST_REVISIONS', 3);
+
+// Set the automatic revisions save for post/page, 60 seconds
+define('AUTOSAVE_INTERVAL', 360);
