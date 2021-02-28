@@ -59,6 +59,7 @@ img {
 
 select {
 	background-color: #fff;
+	outline: none;
 }
 
 pre {
