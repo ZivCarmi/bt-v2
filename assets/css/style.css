@@ -90,6 +90,16 @@ ins, abbr[title] {
 	text-decoration: none;
 }
 
+fieldset {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+legend {
+	display: block;
+}
+
 /*
 //======================================================================
 // CUSTOM RESETS - END
@@ -114,6 +124,10 @@ body {
 
 body * {
 	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
 }
 
 .bg-cover,
