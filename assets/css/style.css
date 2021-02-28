@@ -34,10 +34,13 @@
 //======================================================================
 */
 
+input, button, a, textarea, select {
+	outline: none;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
-	outline: unset;
 }
 
 ul,
@@ -59,7 +62,6 @@ img {
 
 select {
 	background-color: #fff;
-	outline: none;
 }
 
 pre {
@@ -84,7 +86,7 @@ button {
 	outline: unset;
 }
 
-abbr[title] {
+ins, abbr[title] {
 	text-decoration: none;
 }
 
