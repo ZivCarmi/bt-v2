@@ -83,6 +83,10 @@ button {
 	outline: unset;
 }
 
+abbr[title] {
+	text-decoration: none;
+}
+
 /*
 //======================================================================
 // CUSTOM RESETS - END
